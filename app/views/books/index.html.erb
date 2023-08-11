@@ -1,23 +1,3 @@
-<h2>User info</h2>
-<% if @user.image.attached? %>
-  <%= image_tag @user.image, size: "200x200" %>
-<% else %>
-  <%= image_tag 'no_image', size: "200x200" %>
-<% end %>
-<table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th><%= current_user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= current_user.introduction %></th>
-      </tr>
-    </tbody>
-  </table>
-<%= link_to "プロフィール編集", "users/edit" %>
-
 <%= render 'books/book', books: @book %>
 
 <h2>Books</h2>
@@ -33,7 +13,8 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td>
+        <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+        <td><%= link_to book.title, book_path(book.id) %></td>
         <td><%= book.body %></td>
       </tr>
     <% end %>
