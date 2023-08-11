@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+  def index
+    @book = Book.new
+    @books = Book.all
+    @user = current_user
+  end
+
   def show
     @user = current_user
+    @user = User.find(pamarms[:id])
     @books = @user.books
   end
 
