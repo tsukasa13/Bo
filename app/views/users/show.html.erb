@@ -18,7 +18,7 @@
         </td>
         <td><%= @book.title %></td>
         <td><%= @book.body %></td>
-        <td><%= link_to "Edit", edit_book_path(@user) %></td>
+        <td><%= link_to "Edit", edit_book_path(@user.id) %></td>
         <td><%= link_to "Destroy", book_path(@user), method: :delete %></td>
       </tr>
   </tbody>
