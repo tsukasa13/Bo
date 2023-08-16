@@ -1,15 +1,23 @@
-<h2>User info</h2>
-<%= image_tag @user.get_profile_image(200,200) %>
-<table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th><%= current_user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= current_user.introduction %></th>
-      </tr>
-    </tbody>
-  </table>
-<%= link_to "プロフィール編集", "/users/#{@user.id}/edit" %>
+<div class="container">
+  <div lass="col-md-3">
+    <h2>User info</h2>
+    <%= image_tag @user.get_profile_image(200,200) %>
+    <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%= current_user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= current_user.introduction %></th>
+          </tr>
+        </tbody>
+    </table>
+    <div class="row">
+      <div class="btn btn-outline-secondary btn-block">
+        <%= link_to "", "/users/#{@user.id}/edit", class: "fa-solid fa-user-gear text-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
