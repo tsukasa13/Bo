@@ -16,7 +16,9 @@
     </table>
     <div class="row">
       <div class="btn btn-outline-secondary btn-block">
-        <%= link_to "", "/users/#{@user.id}/edit", class: "fa-solid fa-user-gear text-secondary" %>
+        <%= link_to edit_user_path(current_user) do %>
+          <span class="nav-link text-secondary text-white"><i class="fa-solid fa-user-gear"></i></span>
+        <% end %>
       </div>
     </div>
   </div>
